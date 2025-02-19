@@ -1,4 +1,15 @@
 #!/bin/bash
+# security-hardening.sh - System Hardening Script
+# License: AGPL-3.0
+#
+# This script applies security best practices to harden a Linux system.
+# It disables unnecessary services, configures firewall rules, and enforces security policies.
+#
+# Supported OS: Ubuntu, Debian
+#
+# Usage: Run as root: `sudo bash security-hardening.sh`
+#
+# Author: ankaboot.io
 
 GREEN=$'\033[0;32m'
 RED=$'\033[0;31m'

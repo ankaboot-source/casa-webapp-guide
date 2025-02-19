@@ -39,5 +39,5 @@ This tool helps us identify new vulnerabilities and automatically report them by
 
 ## Security Hardening
 We integrated some recommendations to harden the infrastructure security including auto system update, disabling root SSH access, disabling SSH forwarding, enable TCP-SYNcookie protection, create firewall rules to allow only necessary inbounds and outbounds, install some known system audit tools, such us Lynis, Clamav, Rkhunter, Dbsums...
-most of the mentioned configurations can be done by running this [script](https://github.com/ankaboot-source/casa-webapp-guide/tree/main/security-hardening.sh):
+most of the mentioned configurations can be done by running this [script](https://github.com/ankaboot-source/casa-webapp-guide/tree/main/security-hardening.sh) (works on Ubuntu, Debian currently):
 > sudo bash security-hardening.sh
