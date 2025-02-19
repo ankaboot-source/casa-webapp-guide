@@ -1,5 +1,3 @@
-[![Mozilla Observatory Score](https://img.shields.io/badge/Security%20Score-A%2B-2ea44f)](https://developer.mozilla.org/en-US/observatory/analyze?host=App.leadminer.io)
-
 # CASA WebApp Guidance  
 
 This repository provides guidance on obtaining the CASA (Cloud Application Security Assessment) certification for web applications. It includes requirements, best practices, and security configurations needed to meet CASA standards.
