@@ -35,7 +35,7 @@ This talk is ideal for developers, security engineers, and cloud architects who 
 ---
 
 ## Steps of the Talk  
-1. **Secure by Design? Think Again.**  
+1. **Think your app is secure? Think again.**  
    - How Google’s CASA Tier 2 requirement for IMAP access revealed gaps in our security.  
    - The reality of "secure by design" vs. compliance-driven security.  
 
@@ -47,12 +47,12 @@ This talk is ideal for developers, security engineers, and cloud architects who 
 
 3. **Sprinting Through the Verification Process**  
    - **Philosophy:** Default to "yes." If it’s not exact, explain why it still works.
-   - Triage mode: How we categorized requirements into "Already done, just document", "Quick wins" and "Needs deep work" challenges.  
+   - Triage mode: How we categorized requirements into "Already done, just document", "Quick wins" and "Needs deep work".
    - Tools and techniques for efficient compliance testing.
 
 4. **Lessons Beyond Compliance**  
    - Unexpected wins: How CASA uncovered hidden risks and improved our overall security.  
-   - The long-term benefits of aligning with industry standards.  
+   - The long-term benefits of aligning with industry standards.
 
 5. **Strategies for CASA Certification**  
    - Practical tips for preparing, prioritizing, and passing the CASA assessment.  
