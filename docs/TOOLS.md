@@ -1,7 +1,7 @@
 # Security Hardening tools
 We have implemented a multi-layered approach to enhance the security of both our infrastructure and application. These measures are designed to safeguard against unauthorized access, cyber threats, and potential vulnerabilities.
 
-## Infrastructure Guideline
+## Infrastructure
 Infrastructure security focuses on protecting our servers, instances, and admin dashboards from unauthorized access and known attacks such as SYN flood DDoS attacks, brute force attempts, and more. To achieve this, we have employed a combination of robust tools and strategies, including:
 
 - **Firewalls** to filter and control incoming and outgoing traffic.
@@ -30,14 +30,13 @@ In addition to serving as a reverse proxy, forward auth, web server and wide uti
 We use Ecryptfs tool to encrypt our databases filesystem at rest, luks is another option if you prefer to encrypt the whole disk.
 
 
-## Application Security
+## OS
+We integrated some recommendations to harden the infrastructure security including auto system update, disabling root SSH access, disabling SSH forwarding, enable TCP-SYNcookie protection, create firewall rules to allow only necessary inbounds and outbounds, install some known system audit tools, such us Lynis, Clamav, Rkhunter, Dbsums...
+most of the mentioned configurations can be done by running this [script](https://github.com/ankaboot-source/casa-webapp-guide/tree/main/security-hardening.sh):
+> sudo bash security-hardening.sh
+
+## Application
 
 Application Security focuses on the continuous detection of vulnerabilities, such as missing security headers and other weaknesses. We perform weekly DAST (Dynamic Application Security Testing) scans using OWASP's recommended tool, ZAP Proxy, which is automated through our CI/CD pipeline.
 
 This tool helps us identify new vulnerabilities and automatically report them by creating GitHub issues for tracking and remediation.
-
-
-## OS Hardening
-We integrated some recommendations to harden the infrastructure security including auto system update, disabling root SSH access, disabling SSH forwarding, enable TCP-SYNcookie protection, create firewall rules to allow only necessary inbounds and outbounds, install some known system audit tools, such us Lynis, Clamav, Rkhunter, Dbsums...
-most of the mentioned configurations can be done by running this [script](https://github.com/ankaboot-source/casa-webapp-guide/tree/main/security-hardening.sh):
-> sudo bash security-hardening.sh
