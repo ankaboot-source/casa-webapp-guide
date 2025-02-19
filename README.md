@@ -1,24 +1,26 @@
-# CASA WebApp Guidance  
+# 🕮 CASA WebApp Guidance  
 
-This repository provides guidance on obtaining the CASA (Cloud Application Security Assessment) certification for web applications. It includes requirements, best practices, and security configurations needed to meet CASA standards.
+This repository provides guidance on obtaining the CASA (Cloud Application Security Assessment) certification for web applications. It includes requirements, best practices, and security configurations needed to meet CASA standards. 
 
-## Why looking to be CASA certified?  
-The CASA assessment is based on OWASP's Application Security Verification Standard (ASVS), ensuring a consistent and industry-recognized approach to securing applications. It provides a structured set of security requirements designed to harden applications against modern threats, aligning with OWASP Top 10 vulnerabilities
+## 🤔 Why looking to be CASA certified?  
 
-CASA certification (Tier 2) is required by some cloud providers including Google to enable access to specific services like Gmail's IMAP server.
+CASA certification (Tier 2) is a critical security requirement for Web application based on OWASP's Application Security Verification Standard (ASVS). It ensures compliance with industry security standards, enabling access to some cloud provider services like email integration (e.g., Gmail's IMAP server). Beyond technical access, CASA certification is widely recognized as an industry gold standard, signaling a commitment to robust security practices and fostering trust with users and partners.
 
-## Getting Started  
+## 🏁 Getting Started  
 
-Follow this [Security guideline](https://github.com/ankaboot-source/casa-webapp-guide/tree/main/docs/TOOLS.md) to harden your application and infrastructure security.
+1. Install these [Tools](./docs/TOOLS.md) to harden your infrastructure & OS security
+2. Pre-check your compliance level by filling these forms:
+- [OWASP Checklist](./OWASP-CHECKLIST.pdf)
+- [Self-Assessment Questionnaire (SAQ)](./docs/saq_template.pdf)
+3. Pre-audit your app using the following tools:
+- [Check your HTTP headers](https://developer.mozilla.org/en-US/observatory)
+- [Pentest your app](https://www.zaproxy.org/getting-started/)
+- [Keeping your supply chain secure with Dependabot](https://github.com/dependabot/dependabot-core)
 
-## CASA Rules & Self-Assessment Questionnaire (SAQ)  
+[Find more tooling here...](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools)
 
-To obtain the CASA certification, you must comply with the required security policies and complete the **Self-Assessment Questionnaire (SAQ)**.
-
-📄 **CASA Compliance Documents:**
-- [Self-Assessment Questionnaire (SAQ)](./TAC-SAQ.ods)
-
-Ensure you review these files and follow all necessary security controls before submitting your application.
+## This guide is provided to you by ankaboot.io
+[ankaboot.io](https://www.ankaboot.io) is a R&D marketing tech company.
 
 ## License  
 This repository is licensed under the **GNU AGPL-3.0**. See the [LICENSE](./LICENSE) file for details.
