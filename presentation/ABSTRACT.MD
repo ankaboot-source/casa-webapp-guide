@@ -1,5 +1,4 @@
-## Title  
-**"Web Application Security: Real-world journey to CASA certification"**
+## Web Application Security: Real-world journey to CASA certification
 
 ## Abstract  
 When Google mandated Cloud Application Security Assessment (CASA) Tier 2 certification for accessing their IMAP server, we thought our security practices were already rock-solid. With firewall rules, Fail2ban for DDoS prevention, regular pentesting, and secure coding practices, we were confident in our "secure by design" approach for our Web Application. But CASA had other plans—60+ rigorous requirements that challenged our assumptions and pushed us to rethink our security posture.  
@@ -58,7 +57,3 @@ This talk is ideal for developers, security engineers, and cloud architects who 
 5. **Strategies for CASA Certification**  
    - Practical tips for preparing, prioritizing, and passing the CASA assessment.  
    - Building a culture of security and compliance within your team.  
-
----
-
-This upgraded version provides a clearer structure, emphasizes the value of the talk, and includes additional details to make it more appealing to both organizers and attendees. Let me know if you'd like further refinements!
