@@ -4,9 +4,9 @@
 
 This repository provides guidance on obtaining the CASA (Cloud Application Security Assessment) certification for web applications. It includes requirements, best practices, and security configurations needed to meet CASA standards.
 
-## Certification  
+## Why looking to be CASA certified?  
 
-We have successfully obtained our CASA certification from **TAC Security**, a security assessment provider **recommended by Google** for CASA Tier 2 evaluations.
+CASA certification (Tier 2) is required by some cloud providers including Google to enable access to specific services like Gmail's IMAP server.
 
 ## Getting Started  
 
