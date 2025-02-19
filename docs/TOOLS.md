@@ -24,7 +24,7 @@ Combined with Cloudflare, Fail2ban will ban malicious IPs on server level and on
 
 #### 4. Caddy Security
 In addition to serving as a reverse proxy, forward auth, web server and wide utilities, we use Caddy's security module to protect our databases and monitoring admin dashboards by implementing GitHub Single Sign-On, allowing access exclusively for specific users.
-
+you can use this [script](https://github.com/ankaboot-source/caddy-security.sh) (reverse proxy self-hosted supabase instance with SSO enabled only on Supabase studio) or update it based on your needs. 
 
 #### 5. At rest Encryption
 We use Ecryptfs tool to encrypt our databases filesystem at rest, luks is another option if you prefer to encrypt the whole disk.
