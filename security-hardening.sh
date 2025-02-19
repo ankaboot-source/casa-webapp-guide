@@ -1,4 +1,12 @@
 #!/bin/bash
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Author: Ankaboot.io - Zied - tech@ankaboot.io
+
+# Security Hardening Script
+# This script enhances Linux server security on Debian-based distributions (e.g., Ubuntu).
+# It disables root SSH access, disables SSH forwarding, adds swap memory, enables TCP-SYNcookie protection,
+# and optionally installs ClamAV, Rkhunter, Lynis, and Debsums for additional security.
+# Requires root privileges and a sudo user before disabling root SSH access.
 
 GREEN=$'\033[0;32m'
 RED=$'\033[0;31m'
