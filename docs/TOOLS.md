@@ -21,6 +21,101 @@ Fail2ban is an Intrusion Detection/Prevention System, we use it to detect in rea
 
 Combined with Cloudflare, Fail2ban will ban malicious IPs on server level and on Cloudflare by creating WAF rules blocking the Specific IP.
 
+<details>
+<summary><strong>Integrating Fail2ban with Cloudflare</strong></summary>
+
+
+To extend Fail2ban’s protection to Cloudflare, follow these steps to automatically ban malicious IPs on Cloudlfare WAF:
+
+**I. Set Up Cloudflare API Token**
+
+1. Go to **Cloudflare Dashboard** → **Profile** → **API Tokens**.  
+2. Create a token with the following permissions:  
+
+   > **Account.Account WAF** – Edit    
+3. Set the token to only apply to the domain you want to protect.  
+4. Copy the generated **API Token**.  
+
+
+**II. Configure Fail2ban**
+
+Fail2ban includes a default **Cloudflare** action that allows it to send API requests to Cloudflare when an IP is banned.
+
+To set it up:
+
+1. Open the Cloudflare action configuration file:
+
+   ```bash
+   sudo nano /etc/fail2ban/action.d/cloudflare.conf
+   ```
+   Add your Cloudflare API Token and Cloudflare Email by updating the following fields:
+
+   > cftoken = <YOUR_CLOUDFLARE_API_TOKEN>
+     cfuser  = <YOUR_CLOUDFLARE_EMAIL>
+
+2. Configure your Fail2ban Filter:
+  
+   We use the following filter to match 404 errors from our logs.
+
+    Logs format can be different, make sure to update the filter regex accordingly!
+
+   ```bash
+   sudo nano /etc/fail2ban/filter.d/404-filter.conf
+   ```
+   Add the following lines:
+   
+   ```bash
+   [Definition]
+   failregex = ^<HOST> - .* "(GET|POST).*HTTP.*" 404 .*$
+   ## you can add an ignore regex to ignore lines from specific IP, e.g.
+   ignoreregex = ^(111\.111\.111\.111) - .* "(GET|POST).*HTTP.*" 404 .*$
+   ```
+4. Configure your Fail2ban Jail:
+
+   ```bash
+   sudo nano /etc/fail2ban/jail.d/404-Jail.conf
+   ```
+   Add the following lines, update it based on your needs:
+   
+   ```bash
+   [404]
+   enabled  = true
+   port     = https, http
+   filter   = 404-filter
+   logpath  = /var/log/caddy/access.log
+   bantime = 1440m
+   findtime = 250
+   maxretry = 5
+   action = cloudflare
+   ```
+
+5. Restart Fail2ban:
+
+   ```bash
+   sudo systemctl restart fail2ban
+   ```
+
+**III. Useful Fail2ban Commands**
+
+   - Test your filter regex
+     
+   ```bash
+   sudo fail2ban-regex <log_path> /etc/fail2ban/filter.d/<filter_name>
+   ```
+
+   - Check status of specific Jail
+     
+   ```bash
+   sudo fail2ban-client status <jail_name>
+   ```
+
+   - Unban an IP address
+     
+   ```bash
+   sudo fail2ban-client set <jail_name> unbanip <IP_ADDRESS>
+   ```
+
+</details>
 
 #### 4. Caddy Security
 In addition to serving as a reverse proxy, forward auth, web server and wide utilities, we use Caddy's security module to protect our databases and monitoring admin dashboards by implementing GitHub Single Sign-On, allowing access exclusively for specific users.
